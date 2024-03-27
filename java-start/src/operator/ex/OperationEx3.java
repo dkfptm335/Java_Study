@@ -1,4 +1,4 @@
-package operator;
+package operator.ex;
 
 public class OperationEx3 {
 
