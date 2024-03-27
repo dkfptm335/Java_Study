@@ -1,15 +1,32 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import java.util.Scanner;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+public class Main {
+    static int count_0 = 0, count_1 = 0;
+
+    public static int fibonacci(int n) {
+
+
+        if (n == 0) {
+            count_0++;
+            return 0;
+        } else if (n == 1) {
+            count_1++;
+            return 1;
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
         }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+
+        for (int i = 0; i < t; i++) {
+            count_0 = 0;
+            count_1 = 0;
+            int n = sc.nextInt();
+            fibonacci(n);
+            System.out.println(count_0 + " " + count_1);
+        }
+        sc.close();
     }
 }
